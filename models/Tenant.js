@@ -9,7 +9,7 @@ const TenantSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  landLord: {
+  landlordControl: {
     type: String,
     required: true,
   },
@@ -26,10 +26,10 @@ const TenantSchema = new mongoose.Schema({
   //   required: true,
   // },
   
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User",
-  },
+  // user: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   ref: "User",
+  // },
   createdAt: {
     type: Date,
     default: Date.now,
