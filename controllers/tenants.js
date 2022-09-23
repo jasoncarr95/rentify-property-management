@@ -1,6 +1,14 @@
 const Tenant = require("../models/Tenant");
 
 module.exports = {
+    getHome: async (req, res) => {
+        try {
+        //   const posts = await Post.find({ user: req.user.id });
+          res.render("home.ejs", {user: req.user });
+        } catch (err) {
+          console.log(err);
+        }
+      },
     getForm: async (req, res) => {
         try {
             // const posts = await Post.find({ user: req.user.id });
@@ -17,15 +25,15 @@ module.exports = {
           console.log(err);
         }
       },
-    getPost: async (req, res) => {
-    try {
-      const post = await Post.findById(req.params.id);
-      const comments = await Comment.find({post: req.params.id}).sort({createdAt: "desc"}).lean();
-      res.render("post.ejs", { post: post, user: req.user,comments });
-    } catch (err) {
-      console.log(err);
-    }
-  },
+  //   getPost: async (req, res) => {
+  //   try {
+  //     const post = await Post.findById(req.params.id);
+  //     const comments = await Comment.find({post: req.params.id}).sort({createdAt: "desc"}).lean();
+  //     res.render("post.ejs", { post: post, user: req.user,comments });
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // },
     addTenant: async (req, res) => {
         try {
             console.log(req.body)
