@@ -9,10 +9,10 @@ module.exports = {
             console.log(err);
         }
     },
-    getFeed: async (req, res) => {
+    getReports: async (req, res) => {
         try {
           const tenants = await Tenant.find().sort({ createdAt: "desc" }).lean();
-          res.render("feed.ejs", { tenants: tenants });
+          res.render("reports.ejs", { tenants: tenants });
         } catch (err) {
           console.log(err);
         }

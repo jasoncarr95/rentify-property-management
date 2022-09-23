@@ -12,7 +12,11 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 // router.get("/:id", ensureAuth, postsController.getPost);
 
 // router.post("/createPost", postsController.createPost);
-router.post("/addTenant", tenantsController.addTenant)
+
+// router.post("/addTenant", tenantsController.addTenant)
+
+// My Routes
+router.get("/addTenant", ensureAuth, tenantsController.getForm)
 
 // router.put("/likePost/:id", postsController.likePost);
 
