@@ -2,92 +2,443 @@
 
 <section class="container" id="mainContainerDiv">
   <!-- FORM -->
-  <form action="/tenants/addTenant" method="POST">
-    <div class="row g-5">
+  <form action="/tenants/createTenant" method="POST">
+    <!-- <div class="row g-5"> -->
 
-      <div class="col-md-7 col-lg-8">
+    <!-- <div class="col-md-7 col-lg-8"> -->
 
-        <!-- ROW -->
-        <div class="row g-3">
+    <!-- ROW -->
+    <div class="row g-3">
 
-          <!-- LEASE DATE -->
-          <div class="col-12">
-            <label for="leaseDate">Lease Date</label>
-            <input type="date" name="leaseDate" id="leaseDate">
-            <div class="invalid-feedback">
-              Lease Date is.
-            </div>
-          </div>
+      <!-- LEASE DATE -->
+      <div class="col-12">
+        <label for="leaseDate">Lease Date</label>
+        <input type="date" name="leaseDate" id="leaseDate">
+        <div class="invalid-feedback">
+          Lease Date is.
+        </div>
+      </div>
 
-          <!-- QUICKBOOKS STATUS -->
-          <div class="col-12">
-            <label for="quickbooksStatus">Quickbooks Status</label>
-            <select name="quickbooksStatus" id="quickbooksStatus">
-              <option value="addNewTenant">Add New Tenant</option>
-              <option value="deleteMemorizedInvoice">Delete Memorized Invoice</option>
-              <option value="deleteMemorizedInvoice">Delete Memorized Invoice</option>
-              <option value="addedNewTenant" selected>Added New Tenant</option>
-              <option value="deletedMemorizedInvoice">Deleted Memorized Invoice</option>
-              <option value="updatedMemorizedInvoice">Updated Memorized Invoice</option>
-            </select>
-            <div class="invalid-feedback">
-              quickbooksStatus is.
-            </div>
-          </div>
+      <!-- QUICKBOOKS STATUS -->
+      <div class="col-12">
+        <label for="quickbooksStatus">Quickbooks Status</label>
+        <select name="quickbooksStatus" id="quickbooksStatus">
+          <option value="addNewTenant">Add New Tenant</option>
+          <option value="deleteMemorizedInvoice">Delete Memorized Invoice</option>
+          <option value="deleteMemorizedInvoice">Delete Memorized Invoice</option>
+          <option value="addedNewTenant" selected>Added New Tenant</option>
+          <option value="deletedMemorizedInvoice">Deleted Memorized Invoice</option>
+          <option value="updatedMemorizedInvoice">Updated Memorized Invoice</option>
+        </select>
+        <div class="invalid-feedback">
+          quickbooksStatus is.
+        </div>
+      </div>
 
-          <!-- TENANT NAME -->
-          <div class="col-sm-6">
-            <label for="firstName" class="form-label">First name</label>
-            <input type="text" class="form-control" id="firstName" placeholder="First Name" name="firstName">
-            <div class="invalid-feedback">
-              Valid first name is.
-            </div>
-          </div>
-          <div class="col-sm-6">
-            <label for="lastName" class="form-label">Last name</label>
-            <input type="text" class="form-control" id="lastName" placeholder="Last Name" name="lastName">
-            <div class="invalid-feedback">
-              Valid last name is.
-            </div>
-          </div>
+      <!-- BUILDING CONTROL -->
+      <div class="col-12">
+        <label for="buildingControl">Building Control</label>
+        <select name="buildingControl" id="buildingControl">
+          <!-- TODO INSTEAD OF HAVING A MILLION LL OPTIONS, HAVE "ACTIVE" OPTION, THEN TIE THAT INTO THE LL CONTROL  -->
+          <option value="active" selected>ACTIVE</option>
 
-          <!-- BUILDING CONTROL -->
+          <option value="closed">CLOSED</option>
+          <option value="rented">RENTED</option>
+          <option value="vacant">VACANT</option>
 
-          <!-- landlordControl -->
-          <div class="col-12">
-            <label for="landlordControl">landlordControl</label>
-            <!-- TODO -->
-            <select name="landlordControl" id="landlordControl">
-              <option value="borntHill">BH</option>
-              <option value="hollandHouse">HH</option>
-              <option value="garyLynn">GL</option>
-              <option value="stRegis">STR</option>
-              <option value="riverTerrace">RT</option>
-              <option value="mbw">MBW</option>
-              <option value="spathi">SPATHI</option>
-              <!-- ADD CARR, SPATHI, ETC.. OPTIONS FOR MOM TO CREATE NEW? -->
-              <option value="vacant">VACANT</option>
+        </select>
+        <div class="invalid-feedback">
+          buildingControl is.
+        </div>
+      </div>
 
-            </select>
-            <div class="invalid-feedback">
-              landlordControl is.
-            </div>
-          </div>
+      <!-- streetControl -->
+      <div class="col-12">
+        <label for="streetControl">streetControl</label>
+        <!-- TODO -->
+        <select name="streetControl" id="streetControl">
+          <!-- INSTEAD OF HAVING A MILLION LL OPTIONS, HAVE "ACTIVE" OPTION, THEN TIE THAT INTO THE LL CONTROL  -->
+          <option value="active" selected>ACTIVE</option>
 
-          <!-- streetControl -->
+          <option value="borntHill">BH</option>
+          <option value="hollandHouse">HH</option>
+          <option value="vacant">VACANT</option>
 
-          <!-- APT NUMBER -->
-          <div class="col-md-3">
-            <!-- TODO make right size -->
-            <label for="apartmentNumber" class="form-label">apartmentNumber</label>
-            <input type="text" class="form-control" id="apartmentNumber" placeholder="apartmentNumber">
-            <div class="invalid-feedback">
-              apartmentNumber.
-            </div>
-          </div>
+        </select>
+        <div class="invalid-feedback">
+          streetControl is.
+        </div>
+      </div>
 
-          <!-- END FORM -->
-          <button type="submit" class="btn btn-primary">Submit</button>
+      <!-- APT NUMBER -->
+      <div class="col-sm-3">
+        <!-- TODO make right size -->
+        <label for="apartmentNumber" class="form-label">apartmentNumber</label>
+        <input type="text" class="form-control" id="apartmentNumber" placeholder="apartmentNumber">
+        <div class="invalid-feedback">
+          apartmentNumber.
+        </div>
+      </div>
+
+      <!-- landlordControl -->
+      <div class="col-12">
+        <label for="landlordControl">landlordControl</label>
+        <!-- TODO -->
+        <select name="landlordControl" id="landlordControl">
+          <option value="borntHill">BH</option>
+          <option value="hollandHouse">HH</option>
+          <option value="garyLynn">GL</option>
+          <option value="stRegis">STR</option>
+          <option value="riverTerrace">RT</option>
+          <option value="mbw">MBW</option>
+          <option value="spathi">SPATHI</option>
+          <!-- ADD CARR, SPATHI, ETC.. OPTIONS FOR MOM TO CREATE NEW? -->
+          <option value="vacant">VACANT</option>
+
+        </select>
+        <div class="invalid-feedback">
+          landlordControl is.
+        </div>
+      </div>
+
+      <!-- TENANT NAME -->
+      <div class="col-sm-6">
+        <label for="firstName" class="form-label">First name</label>
+        <input type="text" class="form-control" id="firstName" placeholder="First Name" name="firstName">
+        <div class="invalid-feedback">
+          Valid first name is.
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <label for="lastName" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Last Name" name="lastName">
+        <div class="invalid-feedback">
+          Valid last name is.
+        </div>
+      </div>
+
+      <!-- EXTRA SHIT CHECKBOX -->
+      <!-- TODO fix bootstrap/UI. add tooltips? -->
+
+      <fieldset class="col-12">
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="getsHUD">
+          <label class="form-check-label" for="getsHUD">HUD</label>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="dss_catholicCharity">
+          <label class="form-check-label" for="dss_catholicCharity">DSS/CC</label>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="monthToMonth">
+          <label class="form-check-label" for="monthToMonth">Mo-to-Mo</label>
+        </div>
+
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="specialAddress">
+          <label class="form-check-label" for="specialAddress">Special Address</label>
+        </div>
+
+      </fieldset>
+
+      <!-- SECURITY DEPOSIT -->
+      <div class="col-md-3">
+        <!-- TODO fix style.. add currency formatter? - JS -->
+        <label for="securityDeposit" class="form-label">securityDeposit</label>
+        <input type="number" class="form-control" id="securityDeposit" placeholder="securityDeposit">
+        <div class="invalid-feedback">
+          securityDeposit.
+        </div>
+      </div>
+
+      <!-- PETS checkbox -->
+
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input" id="hasPets">
+        <label class="form-check-label" for="hasPets">Pets</label>
+      </div>
+
+      <!-- QUESTION pet deposit field?-->
+
+      <!-- MONTHLY PET FEE  -->
+      <!-- TODO fix style.. add currency formatter? - JS -->
+
+      <div class="col-md-3">
+        <label for="petFee" class="form-label">Monthly Pet Fee</label>
+        <input type="number" class="form-control" id="petFee" placeholder="">
+      </div>
+
+      <!-- originalRent -->
+      <!-- TODO fix style.. add currency formatter? - JS -->
+
+      <div class="col-md-3">
+        <label for="originalRent" class="form-label">Original Rent</label>
+        <input type="text" class="form-control" id="originalRent" placeholder="">
+        <div class="invalid-feedback">
+          originalRent
+        </div>
+      </div>
+
+      <!-- LEASE BEGINS -->
+      <!-- QUESTION lease begins -> lease start? -->
+
+      <div class="col-12">
+        <label for="leaseStart">Lease Start</label>
+        <input type="date" name="leaseStart" id="leaseStart">
+      </div>
+
+      <!-- LEASE ENDS -->
+      <div class="col-12">
+        <label for="leaseEnd">Lease Ends</label>
+        <input type="date" name="leaseEnd" id="leaseEnd">
+        <div class="invalid-feedback">
+          leaseEnd is.
+        </div>
+      </div>
+
+      <!-- TENANT STATUS SELECT -->
+      <div class="col-md-3">
+        <!-- FIX label to side -->
+        <label for="tenantStatus">Tenant Status</label>
+        <!-- TODO improve this process.. prob dont need a million options -->
+        <select class="form-select" id="tenantStatus">
+          <option value="">Choose...</option>
+          <option value="notice30Day">30 Day Notice</option>
+          <option value="closeFile">Close File</option>
+          <option value="closedFile">Closed File</option>
+          <option value="hold">Hold</option>
+          <option value="leaseReceived">Lease Rec'd</option>
+          <option value="leaseSent">Lease Sent</option>
+          <option value="mailRenewal">Mail Renewal</option>
+          <option value="monthToMonth">Mo-to-Mo (Send)</option>
+          <option value="monthToMonth-sent">Mo-to-Mo (Inc Sent)</option>
+          <option value="monthToMonth-received">Mo-to-Mo (Rec'd Inc)</option>
+          <option value="newTenant">New</option>
+          <option value="renewal-received">Rec'd Renewal</option>
+          <option value="sendNewLease">Send New Lease</option>
+          <option value="renewal-sent">Sent Renewal</option>
+          <option value="vacating">Vacating</option>
+        </select>
+      </div>
+
+      <!-- TENANT STATUS DATE -->
+      <div class="col-12">
+        <label for="tenantStatusDate">Tenant Status (Date)</label>
+        <input type="date" name="tenantStatusDate" id="tenantStatusDate">
+        <div class="invalid-feedback">
+          tenantStatusDate is.
+        </div>
+      </div>
+      <!-- TENANT TENURE DATE -->
+      <div class="col-12">
+        <label for="tenantTenureDate">Tenant Tenure (Date)</label>
+        <input type="date" name="tenantTenureDate" id="tenantTenureDate">
+        <div class="invalid-feedback">
+          tenantTenureDate is.
+        </div>
+      </div>
+
+      <!-- CURRENT RENT -->
+      <div class="col-md-3">
+        <!-- TODO fix style.. add currency formatter? - JS -->
+        <label for="currentRent" class="form-label">Current Rent</label>
+        <input type="text" class="form-control" id="currentRent" placeholder="">
+        <div class="invalid-feedback">
+          currentRent
+        </div>
+      </div>
+
+      <!-- RENT INCREASE -->
+      <div class="col-md-3">
+        <!-- TODO fix style.. add currency formatter? - JS -->
+        <label for="rentIncrease" class="form-label">Rent Increase</label>
+        <input type="text" class="form-control" id="rentIncrease" placeholder="">
+        <div class="invalid-feedback">
+          currentRent
+        </div>
+      </div>
+
+      <!-- LEASE TERM (MONTHS) -->
+      <div class="col-md-3">
+        <label for="leaseTerm" class="form-label">Term (Months)</label>
+        <input type="number" class="form-control" id="leaseTerm" placeholder="">
+        <div class="invalid-feedback">
+          leaseTerm
+        </div>
+      </div>
+
+      <!-- RENEWAL RENT -->
+      <div class="col-md-3">
+        <!-- TODO fix style.. add currency formatter? - JS -->
+        <label for="renewalRent" class="form-label">Renewal Rent</label>
+        <input type="text" inputmode="numeric" class="form-control" id="renewalRent" placeholder="">
+        <div class="invalid-feedback">
+          renewalRent
+        </div>
+      </div>
+
+      <!-- UTIL PAID BY LANDLORD -->
+      <div class="col-12">
+        <label for="utilitiesPaid_landLord">Util paid by LL</label>
+        <!-- TODO -->
+        <select name="utilitiesPaid_landLord" id="utilitiesPaid_landLord">
+          <option value="opt1">1</option>
+          <option value="opt2">2</option>
+          <option value="opt3">3</option>
+        </select>
+      </div>
+
+      <!-- UTIL PAID BY TENANT -->
+      <div class="col-12">
+        <label for="utilitiesPaid_tenant">Util paid by Tenant</label>
+        <!-- TODO -->
+        <select name="utilitiesPaid_tenant" id="utilitiesPaid_tenant">
+          <option value="opt1">1</option>
+          <option value="opt2">2</option>
+          <option value="opt3">3</option>
+        </select>
+      </div>
+
+      <!-- Bedrooms -->
+      <div class="col-md-3">
+        <label for="numOfBedrooms" class="form-label">Bedrooms</label>
+        <input type="number" class="form-control" id="numOfBedrooms" placeholder="">
+      </div>
+
+      <!-- Floor -->
+      <div class="col-12">
+        <label for="apartmentFloor">Floor</label>
+        <select name="apartmentFloor" id="apartmentFloor">
+          <option value="firstFloor">1st</option>
+          <option value="secondFloor">2nd</option>
+          <option value="thirdFloor">3rd</option>
+          <option value="basement">Basement</option>
+          <option value="duplex">Duplex</option>
+          <option value="house">House</option>
+          <option value="townhouse">Townhouse</option>
+        </select>
+      </div>
+
+      <!-- QUESTION checkbox for Basement?? -->
+
+      <!-- Laundry or Hookups -->
+      <div class="col-12">
+        <label for="laundry">Laundry</label>
+
+        <select name="laundry" id="laundry">
+          <option value="noLaundry">None</option>
+          <option value="laundry">Laundry</option>
+          <option value="hookups">Hookups</option>
+        </select>
+      </div>
+
+      <!-- EXTRA SHIT CHECKBOX CO, A/C, Dehumid -->
+      <fieldset class="col-12">
+        <!-- TODO fix bootstrap/UI. add tooltips? -->
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="CO_detector">
+          <label class="form-check-label" for="CO_detector">CO Detector</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="airConditioning">
+          <label class="form-check-label" for="airConditioning">A/C</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input" id="dehumidifier">
+          <label class="form-check-label" for="dehumidifier">Dehumidifier</label>
+        </div>
+      </fieldset>
+
+      <!-- EXTRA SHIT - BLINDS and SHIT -->
+      <div class="col-12">
+        <label for="extras">Extras</label>
+        <select name="extras " id="extras">
+          <option value="miniBlindsAllRooms">Mini Blinds (All Rooms)</option>
+          <option value="miniBlindsAndVerticals">Mini Blinds & Verticals</option>
+          <option value="seeAddendum">See Addendum</option>
+          <!-- QUESTION REMOVED CO AND DEHUMID SINCE CHECKMARKS -->
+          <!-- TODO HOW TO ADD NEW CHOICE? -->
+        </select>
+      </div>
+
+      <!-- Carport or Garage -->
+      <div class="form-check">
+        <!-- TODO fix style -->
+        <input type="checkbox" class="form-check-input" id="carportOrGarage_CheckBox">
+        <label class="form-check-label" for="carportOrGarage_CheckBox">Carport or Garage</label>
+      </div>
+      <div class="col-sm-3">
+        <label for="carportRent" class="form-label">Carport or Garage Rent</label>
+        <input type="text" class="form-control" id="carportRent" placeholder="">
+      </div>
+
+      <!-- HOME PHONE -->
+      <div class="col-md-6">
+        <!-- QUESTION add placeholder="607-123-1234" ? -->
+        <label for="homePhone" class="form-label">Home Telephone</label>
+        <input type="tel" class="form-control" id="homePhone">
+      </div>
+
+      <!-- CELL PHONE -->
+      <div class="col-md-6">
+        <label for="mobilePhone" class="form-label">Mobile Telephone</label>
+        <input type="tel" class="form-control" id="mobilePhone">
+      </div>
+
+      <!-- EMPLOYEER SHIT -->
+      <div class="col-12">
+        <label for="employer" class="form-label">Employer (Name, Job Title) </label>
+        <input type="text" class="form-control" id="employer">
+      </div>
+      <div class="col-md-6">
+        <label for="employerPhone" class="form-label">Employer Phone #</label>
+        <input type="tel" class="form-control" id="employerPhone">
+      </div>
+
+      <!-- EMAIL ADDRESS -->
+      <div class="col-md-6">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+        <div class="invalid-feedback">
+          Please enter a valid email address for shipping updates.
+        </div>
+      </div>
+
+      <!-- Dependents -->
+      <div class="col-sm-3">
+        <label for="dependents" class="form-label">Dependents</label>
+        <input type="text" class="form-control" id="dependents" placeholder="">
+      </div>
+
+      <!-- EMERGENCY CONTACT -->
+      <div class="col-12">
+        <label for="emergencyContact" class="form-label">Emergency Contact (Name-Tel) </label>
+        <input type="text" class="form-control" id="emergencyContact">
+      </div>
+
+      <!-- VEHICLE -->
+      <div class="col-12">
+        <!-- TODO Fix process of inputting this.. instead of one big text form? -->
+        <label for="vehicleInfo" class="form-label">Vehicle (Year-Make-Model-Color-Plate)</label>
+        <input type="text" class="form-control" id="vehicleInfo">
+      </div>
+
+      <!-- License -->
+      <div class="col-6">
+        <label for="license" class="form-label">License </label>
+        <input type="text" class="form-control" id="license">
+      </div>
+
+      <!-- DOB -->
+      <div class="col-md-3">
+        <label for="dateOfBirth" class="form-label">DOB</label>
+        <input type="date" class="form-control" id="dateOfBirth">
+      </div>
+
+      <!-- END FORM -->
+      <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </section>
 
