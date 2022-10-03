@@ -17,11 +17,13 @@ router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 
 // FEED REPLACEMENT
+router.get("/allTenants", ensureAuth, tenantsController.getAllTenants);
+
+
 router.get("/reports", ensureAuth, tenantsController.getReports);
 
 // My Routes
 router.get("/addTenant", ensureAuth, tenantsController.getForm);
 // router.get("/showTenants", ensureAuth, tenantsController.showTenants)
-
 
 module.exports = router;

@@ -1,0 +1,25 @@
+<%- include('partials/header') -%>
+
+<%- tenant.firstName || tenant["First Name"] %>
+
+<table class="table">
+  <% for(const property in tenant) { %>
+  <% if(tenant[property]) { %>
+    <tr>
+    <th><%= property %> </th>
+  <td> <%= tenant[property] %> </td>
+
+  </tr>
+  <% } %>
+  <% } %>
+</table>
+
+<div class="col-6 mt-5">
+  <a class="btn btn-primary" href="/home">Return to home</a>
+  <a class="btn btn-primary" href="/allTenants">Return to Tenant Feed</a>
+  <a class="btn btn-primary" href="/reports">Return to Tenant Feed</a>
+</div>
+</div>
+</div>
+
+<%- include('partials/footer') -%>
