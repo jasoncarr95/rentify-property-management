@@ -41,7 +41,7 @@
         <select name="buildingControl" id="buildingControl">
           <!-- TODO INSTEAD OF HAVING A MILLION LL OPTIONS, HAVE "ACTIVE" OPTION, THEN TIE THAT INTO THE LL CONTROL  -->
           <option value="active" selected>ACTIVE</option>
-
+          <option value="BH">BH</option>
           <option value="closed">CLOSED</option>
           <option value="rented">RENTED</option>
           <option value="vacant">VACANT</option>
@@ -74,7 +74,8 @@
       <div class="col-sm-3">
         <!-- TODO make right size -->
         <label for="apartmentNumber" class="form-label">apartmentNumber</label>
-        <input type="text" class="form-control" id="apartmentNumber" placeholder="apartmentNumber">
+        <input type="text" class="form-control" name="apartmentNumber" id="apartmentNumber"
+          placeholder="apartmentNumber">
         <div class="invalid-feedback">
           apartmentNumber.
         </div>
@@ -147,7 +148,8 @@
       <div class="col-md-3">
         <!-- TODO fix style.. add currency formatter? - JS -->
         <label for="securityDeposit" class="form-label">securityDeposit</label>
-        <input type="number" class="form-control" id="securityDeposit" placeholder="securityDeposit">
+        <input type="number" class="form-control" name="securityDeposit" id="securityDeposit"
+          placeholder="securityDeposit">
         <div class="invalid-feedback">
           securityDeposit.
         </div>
@@ -167,7 +169,7 @@
 
       <div class="col-md-3">
         <label for="petFee" class="form-label">Monthly Pet Fee</label>
-        <input type="number" class="form-control" id="petFee" placeholder="">
+        <input type="number" class="form-control" name="petFee" id="petFee" placeholder="">
       </div>
 
       <!-- originalRent -->
@@ -175,7 +177,7 @@
 
       <div class="col-md-3">
         <label for="originalRent" class="form-label">Original Rent</label>
-        <input type="text" class="form-control" id="originalRent" placeholder="">
+        <input type="text" class="form-control" name="originalRent" id="originalRent" placeholder="">
         <div class="invalid-feedback">
           originalRent
         </div>
@@ -203,7 +205,7 @@
         <!-- FIX label to side -->
         <label for="tenantStatus">Tenant Status</label>
         <!-- TODO improve this process.. prob dont need a million options -->
-        <select class="form-select" id="tenantStatus">
+        <select class="form-select" name="tenantStatus" id="tenantStatus">
           <option value="">Choose...</option>
           <option value="notice30Day">30 Day Notice</option>
           <option value="closeFile">Close File</option>
@@ -244,7 +246,7 @@
       <div class="col-md-3">
         <!-- TODO fix style.. add currency formatter? - JS -->
         <label for="currentRent" class="form-label">Current Rent</label>
-        <input type="text" class="form-control" id="currentRent" placeholder="">
+        <input type="text" class="form-control" name="currentRent" id="currentRent" placeholder="">
         <div class="invalid-feedback">
           currentRent
         </div>
@@ -254,7 +256,7 @@
       <div class="col-md-3">
         <!-- TODO fix style.. add currency formatter? - JS -->
         <label for="rentIncrease" class="form-label">Rent Increase</label>
-        <input type="text" class="form-control" id="rentIncrease" placeholder="">
+        <input type="text" class="form-control" name="rentIncrease" id="rentIncrease" placeholder="">
         <div class="invalid-feedback">
           currentRent
         </div>
@@ -263,7 +265,7 @@
       <!-- LEASE TERM (MONTHS) -->
       <div class="col-md-3">
         <label for="leaseTerm" class="form-label">Term (Months)</label>
-        <input type="number" class="form-control" id="leaseTerm" placeholder="">
+        <input type="number" class="form-control" name="leaseTerm" id="leaseTerm" placeholder="">
         <div class="invalid-feedback">
           leaseTerm
         </div>
@@ -271,9 +273,8 @@
 
       <!-- RENEWAL RENT -->
       <div class="col-md-3">
-        <!-- TODO fix style.. add currency formatter? - JS -->
         <label for="renewalRent" class="form-label">Renewal Rent</label>
-        <input type="text" inputmode="numeric" class="form-control" id="renewalRent" placeholder="">
+        <input type="text" inputmode="numeric" name="renewalRent" class="form-control" id="renewalRent" placeholder="">
         <div class="invalid-feedback">
           renewalRent
         </div>
@@ -304,7 +305,7 @@
       <!-- Bedrooms -->
       <div class="col-md-3">
         <label for="numOfBedrooms" class="form-label">Bedrooms</label>
-        <input type="number" class="form-control" id="numOfBedrooms" placeholder="">
+        <input type="number" name="numOfBedrooms" class="form-control" id="numOfBedrooms" placeholder="">
       </div>
 
       <!-- Floor -->
@@ -354,7 +355,7 @@
       <!-- EXTRA SHIT - BLINDS and SHIT -->
       <div class="col-12">
         <label for="extras">Extras</label>
-        <select name="extras " id="extras">
+        <select name="extras" id="extras">
           <option value="miniBlindsAllRooms">Mini Blinds (All Rooms)</option>
           <option value="miniBlindsAndVerticals">Mini Blinds & Verticals</option>
           <option value="seeAddendum">See Addendum</option>
@@ -371,36 +372,36 @@
       </div>
       <div class="col-sm-3">
         <label for="carportRent" class="form-label">Carport or Garage Rent</label>
-        <input type="text" class="form-control" id="carportRent" placeholder="">
+        <input type="text" class="form-control" name="carportRent" id="carportRent" placeholder="">
       </div>
 
       <!-- HOME PHONE -->
       <div class="col-md-6">
         <!-- QUESTION add placeholder="607-123-1234" ? -->
         <label for="homePhone" class="form-label">Home Telephone</label>
-        <input type="tel" class="form-control" id="homePhone">
+        <input type="tel" class="form-control" name="homePhone" id="homePhone">
       </div>
 
       <!-- CELL PHONE -->
       <div class="col-md-6">
         <label for="mobilePhone" class="form-label">Mobile Telephone</label>
-        <input type="tel" class="form-control" id="mobilePhone">
+        <input type="tel" class="form-control" name="mobilePhone id="mobilePhone">
       </div>
 
       <!-- EMPLOYEER SHIT -->
       <div class="col-12">
         <label for="employer" class="form-label">Employer (Name, Job Title) </label>
-        <input type="text" class="form-control" id="employer">
+        <input type="text" class="form-control" name="employer" id="employer">
       </div>
       <div class="col-md-6">
         <label for="employerPhone" class="form-label">Employer Phone #</label>
-        <input type="tel" class="form-control" id="employerPhone">
+        <input type="tel" class="form-control" name="employerPhone" id="employerPhone">
       </div>
 
       <!-- EMAIL ADDRESS -->
       <div class="col-md-6">
         <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" placeholder="you@example.com">
+        <input type="email" class="form-control" name="email" id="email" placeholder="you@example.com">
         <div class="invalid-feedback">
           Please enter a valid email address for shipping updates.
         </div>
@@ -409,32 +410,32 @@
       <!-- Dependents -->
       <div class="col-sm-3">
         <label for="dependents" class="form-label">Dependents</label>
-        <input type="text" class="form-control" id="dependents" placeholder="">
+        <input type="text" class="form-control" name="dependants" id="dependents" placeholder="">
       </div>
 
       <!-- EMERGENCY CONTACT -->
       <div class="col-12">
         <label for="emergencyContact" class="form-label">Emergency Contact (Name-Tel) </label>
-        <input type="text" class="form-control" id="emergencyContact">
+        <input type="text" class="form-control" name="emergencyContact" id="emergencyContact">
       </div>
 
       <!-- VEHICLE -->
       <div class="col-12">
         <!-- TODO Fix process of inputting this.. instead of one big text form? -->
         <label for="vehicleInfo" class="form-label">Vehicle (Year-Make-Model-Color-Plate)</label>
-        <input type="text" class="form-control" id="vehicleInfo">
+        <input type="text" class="form-control" name="vehicleInfo" id="vehicleInfo">
       </div>
 
       <!-- License -->
       <div class="col-6">
         <label for="license" class="form-label">License </label>
-        <input type="text" class="form-control" id="license">
+        <input type="text" class="form-control" name="license" id="license">
       </div>
 
       <!-- DOB -->
       <div class="col-md-3">
         <label for="dateOfBirth" class="form-label">DOB</label>
-        <input type="date" class="form-control" id="dateOfBirth">
+        <input type="date" class="form-control" name="dateOfBirth" id="dateOfBirth">
       </div>
 
       <!-- END FORM -->
