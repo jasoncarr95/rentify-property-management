@@ -2,15 +2,15 @@ const mongoose = require("mongoose");
 
 const TenantSchema = new mongoose.Schema(
     {
-        firstName: {
+        "First Name": {
             type: String,
             required: true,
         },
-        lastName: {
+        "Last Name": {
             type: String,
             require: true,
         },
-        landlordControl: {
+        "Landlord Control": {
             type: String,
             required: true,
         },
