@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<h1>Rent Roll Example</h1>
+<h1><%= tableHeading %> </h1>
 <% if(tenants!=null) { %>
 
 <!-- <div class="table-responsive"> -->
@@ -26,11 +26,23 @@
     <th><%- header %> </th>
     <% }) %>
   </tr>
-  
-  <% tenants.forEach(function(tenant, index, array){ %>
-  <tr>
-    <td><%= tenant[tableHeaders] %></td>
 
+  <% tenants.forEach(tenant => { %>
+  <tr>
+    <td><%= tenant["Lease Date"] %></td>
+    <td><%= tenant["Building Control"] %></td>
+    <td><%= tenant["Street Control"] %> </td>
+    <td><%= `${tenant["First Name"]} ${tenant["Last Name"]}` || tenant["First Name"] %> </td>
+    <td><%= tenant["Full Name 2"] %> Full Name 2</td>
+    <td><%= tenant["leaseStart"] %> </td>
+    <td><%= tenant["leaseEnd"] %> </td>
+    <td><%= tenant["numOfBedrooms"] %> </td>
+    <td><%= tenant["tenantStatus"] %> </td>
+    <td><%= tenant["tenantStatusDate"] %> </td>
+    <td><%= tenant["tenantTenureDate"] %> </td>
+    <td><%= tenant["renewalRent"] %> </td>
+    <td><%= tenant["carportRent"] %> </td>
+    <td><%= tenant["petFee"] %> </td>
   </tr>
   <% }) %>
 </table>

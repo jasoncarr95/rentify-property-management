@@ -3,6 +3,8 @@ const Tenant = require("../models/Tenant");
 module.exports = {
     getReports: async (req, res) => {
         try {
+            const tableHeading = "Reports";
+
             const tenants = await Tenant.find()
                 .sort({ createdAt: "desc" })
                 .lean();
@@ -10,9 +12,11 @@ module.exports = {
             const tableHeaders = Object.keys(tenants[0]).slice(1, -2);
             // console.log(tableHeaders)
             // console.log(tenants)
+            // console.log(tableHeading)
             res.render("reports.ejs", {
                 tenants: tenants,
                 tableHeaders: tableHeaders,
+                tableHeading: tableHeading,
             });
         } catch (err) {
             console.log(err);
@@ -23,8 +27,11 @@ module.exports = {
             const tenants = await Tenant.find()
                 .sort({ createdAt: "desc" })
                 .lean();
-            // console.log(tenants);
 
+            // console.log(tenants);
+            // console.log(tenants[0].toObject({ virtuals: true }));
+
+            const tableHeading = "Rent Roll";
             // console.log(tenant);
             const tableHeaders = [
                 "Lease Date",
@@ -45,6 +52,7 @@ module.exports = {
             res.render("reports.ejs", {
                 tenants: tenants,
                 tableHeaders: tableHeaders,
+                tableHeading: tableHeading,
             });
         } catch (err) {
             console.log(err);
