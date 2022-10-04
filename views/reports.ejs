@@ -25,15 +25,12 @@
     <% tableHeaders.forEach(header => { %>
     <th><%- header %> </th>
     <% }) %>
-    <!-- <th>First name</th>
-      <th>Last name</th>
-      <th>Landlord</th> -->
   </tr>
+  
   <% tenants.forEach(function(tenant, index, array){ %>
   <tr>
-    <td><%= tenant["firstName"] || tenant["First Name"]%></td>
-    <td><%= tenant["lastName"] || tenant["Last Name"]%></td>
-    <td><%= tenant["landlordControl"] || tenant["Landlord Control"]%></td>
+    <td><%= tenant[tableHeaders] %></td>
+
   </tr>
   <% }) %>
 </table>

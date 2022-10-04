@@ -5,9 +5,13 @@ const router = express.Router();
 // These routes are coming from the exported module in this file
 const tenantsController = require('../controllers/tenants');
 
+const reportsController = require("../controllers/reports")
+
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-//Post Routes - simplified for now
+//Reports Routes - simplified for now
+router.get("/rentroll", ensureAuth, reportsController.getRentRoll)
+
 
 router.get("/:id", ensureAuth, tenantsController.getTenant);
 

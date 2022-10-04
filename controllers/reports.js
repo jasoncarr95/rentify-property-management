@@ -26,7 +26,22 @@ module.exports = {
             // console.log(tenants);
 
             // console.log(tenant);
-            const tableHeaders = [""];
+            const tableHeaders = [
+                "Lease Date",
+                "Building Control",
+                "Street Control",
+                "Full Name",
+                "FullName 2",
+                "Lease Begins",
+                "Lease Ends",
+                "Bdrm",
+                "Tenant Status",
+                "Tenant Status (Date)",
+                "Tenure (Date)",
+                "Renewal Rent",
+                "Carport/Garage Rent",
+                "Monthly Pet Fee",
+            ];
             res.render("reports.ejs", {
                 tenants: tenants,
                 tableHeaders: tableHeaders,
