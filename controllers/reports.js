@@ -49,7 +49,7 @@ module.exports = {
                 "Carport/Garage Rent",
                 "Monthly Pet Fee",
             ];
-            res.render("reports.ejs", {
+            res.render("reports/rentroll.ejs", {
                 tenants: tenants,
                 tableHeaders: tableHeaders,
                 tableHeading: tableHeading,
