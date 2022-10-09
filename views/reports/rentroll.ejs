@@ -56,11 +56,12 @@
     new agGrid.Grid(eGridDiv, gridOptions);
 
     // Fetch data from server
-    fetch("https://www.ag-grid.com/example-assets/row-data.json")
+    fetch("http://localhost:3021/api/allTenants")
         .then(response => response.json())
         .then(data => {
             // load fetched data into grid
             gridOptions.api.setRowData(data);
+            console.log(data)
         });
 </script>
 
