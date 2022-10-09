@@ -14,6 +14,8 @@ const mainRoutes = require("./routes/main");
 // const postRoutes = require("./routes/posts");
 const tenantRoutes = require("./routes/tenants");
 const reportsRoutes = require("./routes/reports")
+//API
+const apiRoutes = require("./routes/api")
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -62,6 +64,8 @@ app.use("/", mainRoutes);
 // app.use("/post", postRoutes);
 app.use("/tenants", tenantRoutes);
 app.use("/reports", reportsRoutes);
+app.use("/api", apiRoutes);
+
 
 
 //Server Running
