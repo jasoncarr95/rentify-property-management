@@ -17,37 +17,51 @@
 </div>
 
 <h1><%= tableHeading %> </h1>
-<% if(tenants!=null) { %>
+<!-- Button to demonstrate calling the grid's API. -->
+<button onclick="deselect()">Deselect Rows</button>
+<!-- The div that will host the grid. ag-theme-alpine is the theme. -->
+<!-- The gid will be the size that this element is given. -->
+<div id="myGrid" class="ag-theme-alpine" style="height: 500px"></div>
+<script type="text/javascript">
+    // Function to demonstrate calling grid's API
+    function deselect() {
+        gridOptions.api.deselectAll()
+    }
 
-<!-- <div class="table-responsive"> -->
-<table class="table">
-    <tr>
-        <% tableHeaders.forEach(header => { %>
-        <th><%- header %> </th>
-        <% }) %>
-    </tr>
+    // Grid Options are properties passed to the grid
+    const gridOptions = {
 
-    <% tenants.forEach(tenant => { %>
-    <tr>
-        <td><%= tenant["Lease Date"] %></td>
-        <td><%= tenant["Building Control"] %></td>
-        <td><%= tenant["Street Control"] %> </td>
-        <td><%= `${tenant["First Name"]} ${tenant["Last Name"]}` || tenant["First Name"] %> </td>
-        <td><%= tenant["Full Name 2"] %> Full Name 2</td>
-        <td><%= tenant["leaseStart"] %> </td>
-        <td><%= tenant["leaseEnd"] %> </td>
-        <td><%= tenant["numOfBedrooms"] %> </td>
-        <td><%= tenant["tenantStatus"] %> </td>
-        <td><%= tenant["tenantStatusDate"] %> </td>
-        <td><%= tenant["tenantTenureDate"] %> </td>
-        <td><%= tenant["renewalRent"] %> </td>
-        <td><%= tenant["carportRent"] %> </td>
-        <td><%= tenant["petFee"] %> </td>
-    </tr>
-    <% }) %>
-</table>
-<!-- </div> -->
+        // each entry here represents one column
+        columnDefs: [
+            { field: "make" },
+            { field: "model" },
+            { field: "price" },
+        ],
 
-<% } %>
+        // default col def properties get applied to all columns
+        defaultColDef: { sortable: true, filter: true },
+
+        rowSelection: 'multiple', // allow rows to be selected
+        animateRows: true, // have rows animate to new positions when sorted
+
+        // example event handler
+        onCellClicked: params => {
+            console.log('cell was clicked', params)
+        }
+    };
+
+    // get div to host the grid
+    const eGridDiv = document.getElementById("myGrid");
+    // new grid instance, passing in the hosting DIV and Grid Options
+    new agGrid.Grid(eGridDiv, gridOptions);
+
+    // Fetch data from server
+    fetch("https://www.ag-grid.com/example-assets/row-data.json")
+        .then(response => response.json())
+        .then(data => {
+            // load fetched data into grid
+            gridOptions.api.setRowData(data);
+        });
+</script>
 
 <%- include('../partials/footer') -%>
