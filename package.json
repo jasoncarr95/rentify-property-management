@@ -7,7 +7,8 @@
         "dev": "next dev",
         "build": "next build",
         "start": "nodemon server.js",
-        "lint": "next lint"
+        "lint": "next lint",
+        "test": "react-scripts test"
     },
     "repository": {
         "type": "git",
@@ -20,6 +21,11 @@
     },
     "homepage": "https://github.com/jasoncarr95/rm-management-backend_qbase#readme",
     "dependencies": {
+        "@testing-library/jest-dom": "^5.16.5",
+        "@testing-library/react": "^13.4.0",
+        "@testing-library/user-event": "^13.5.0",
+        "ag-grid-community": "^28.2.0",
+        "ag-grid-react": "^28.2.0",
         "bcrypt": "^5.0.1",
         "connect-mongo": "^3.2.0",
         "dotenv": "^8.2.0",
@@ -38,5 +44,9 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "validator": "^13.6.0"
+    },
+    "devDependencies": {
+        "eslint": "^8.25.0",
+        "eslint-plugin-react": "^7.31.10"
     }
 }
