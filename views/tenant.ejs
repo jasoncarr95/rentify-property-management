@@ -5,21 +5,19 @@
 <table class="table">
   <% for(const property in tenant) { %>
   <% if(tenant[property]) { %>
-    <tr>
+  <tr>
     <th><%= property %> </th>
-  <td> <%= tenant[property] %> </td>
+    <td> <%= tenant[property] %> </td>
 
   </tr>
   <% } %>
   <% } %>
 </table>
 
-<div class="col-6 mt-5">
+<!-- <div class="col-6 mt-5">
   <a class="btn btn-primary" href="/home">Return to home</a>
   <a class="btn btn-primary" href="/allTenants">Return to Tenant Feed</a>
   <a class="btn btn-primary" href="/reports">Return to Tenant Feed</a>
-</div>
-</div>
-</div>
+</div> -->
 
 <%- include('partials/footer') -%>
