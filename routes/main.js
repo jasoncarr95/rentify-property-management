@@ -6,7 +6,7 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 // Mine
 const tenantsController = require("../controllers/tenants");
-const reportsController = require("../controllers/reports")
+const reportsController = require("../controllers/reports");
 
 //Main Routes - simplified for now
 router.get("/", homeController.getIndex);
@@ -18,8 +18,7 @@ router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 
 // FEED REPLACEMENT
-router.get("/allTenants", ensureAuth, tenantsController.getAllTenants);
-
+// router.get("/tenants", ensureAuth, tenantsController.getAllTenants);
 
 router.get("/reports", ensureAuth, reportsController.getReports);
 

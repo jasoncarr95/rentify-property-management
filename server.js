@@ -13,9 +13,9 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 // const postRoutes = require("./routes/posts");
 const tenantRoutes = require("./routes/tenants");
-const reportsRoutes = require("./routes/reports")
+const reportsRoutes = require("./routes/reports");
 //API
-const apiRoutes = require("./routes/api")
+const apiRoutes = require("./routes/api");
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -66,9 +66,9 @@ app.use("/tenants", tenantRoutes);
 app.use("/reports", reportsRoutes);
 app.use("/api", apiRoutes);
 
-
-
 //Server Running
 app.listen(process.env.PORT, () => {
-    console.log("Server is running, you better catch it!");
+    console.log(
+        `Server is running on port:${process.env.PORT}, you better catch it!`
+    );
 });
