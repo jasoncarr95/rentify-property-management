@@ -22,6 +22,7 @@
 <!-- The div that will host the grid. ag-theme-alpine is the theme. -->
 <!-- The gid will be the size that this element is given. -->
 <div id="myGrid" class="ag-theme-alpine" style="height: 500px"></div>
+
 <script type="text/javascript">
     // Function to demonstrate calling grid's API
     function deselect() {
@@ -33,20 +34,19 @@
 
         // each entry here represents one column
         columnDefs: [
-            { field: "Lease Date" },
-            { field: "Landlord Control" },
-            { field: "Building Control" },
-            { field: "Street Control" },
+            { field: "leaseDate" },
+            { field: "building" },
+            { field: "streetControl" },
             { field: "First Name" },
             { field: "Last Name" },
-            { field: "leaseStart" },
-            { field: "leaseEnd" },
+            { field: "Lease Begins" },
+            { field: "Lease Ends" },
             { field: "numOfBedrooms" },
             { field: "tenantStatus" },
             { field: "tenantStatusDate" },
-            { field: "renewalRent" },
-            { field: "carportRent" },
-            { field: "petFee" },
+            { field: "Renewal Rent" },
+            { field: "Carport or Garage Rent" },
+            { field: "Monthly Pet Fee Amount" },
 
 
         ],
@@ -69,7 +69,7 @@
     new agGrid.Grid(eGridDiv, gridOptions);
 
     // Fetch data from server
-    fetch("http://localhost:3021/api/allTenants")
+    fetch("http://localhost:2121/reports/rentroll?landlord=STR")
         .then(response => response.json())
         .then(data => {
             // load fetched data into grid

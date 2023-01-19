@@ -79,7 +79,9 @@
 ## About The Project
 
 <!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+
 Application to make it easier for landlords or property managers to manage multiple residential properties.
+
 <!-- TODO ABOUT THE PROJECT -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -123,22 +125,22 @@ This is an example of how to list things you need to use the software and how to
 1. Create a free MongoDB Atlas account to host your database at [MongoDB](https://cloud.mongodb.com/)
 2. Clone the repo
 
-    ```sh
-    git clone https://github.com/jasoncarr95/rentify-property-management.git
-    ```
+   ```sh
+   git clone https://github.com/jasoncarr95/rentify-property-management.git
+   ```
 
 3. Install NPM packages
 
-    ```sh
-    npm install
-    ```
+   ```sh
+   npm install
+   ```
 
-4. Create a `.env` file in the  `config` directory and add the following as key: value
+4. Create a `.env` file in the `config` directory and add the following as key: value
 
-    ```js
-    PORT = (can be any port example: 3000)
-    DB_STRING = "ENTER YOUR MONGODB URI ";
-    ```
+   ```js
+   PORT = (can be any port example: 3000)
+   DB_STRING = "ENTER YOUR MONGODB URI ";
+   ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -162,7 +164,7 @@ ROADMAP -->
   - [ ] Archive Previous Tenants
 - [ ] Print PDFs (Lease, paperwork) from template
 - [ ] Find/Search For Tenant
-<!-- 
+<!--
 See the [open issues](https://github.com/jasoncarr95/rentify-property-management/issues) for a full list of proposed features (and known issues). -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
